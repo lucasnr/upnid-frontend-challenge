@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Car } from './styles';
+import { Container, Car, Obstacle } from './styles';
 
 export default function Game() {
 	const [left, setLeft] = useState(33.33);
+	const [obstacle, setObstacle] = useState();
+
 	useEffect(() => {
 		document.onkeydown = function (e) {
 			e = e || window.event;
@@ -48,8 +50,23 @@ export default function Game() {
 		}
 	}, []);
 
+	useEffect(() => {
+		setInterval(() => {
+			const obstacles = [
+				{ initalPosition: 33.33, toPosition: -33.33 },
+				{ initalPosition: 45, toPosition: 33.33 },
+				{ initalPosition: 66.66, toPosition: 99.99 },
+			];
+			const random = Math.floor(Math.random() * 3);
+			setObstacle(obstacles[random]);
+		}, 3500);
+	}, []);
+
 	return (
 		<Container>
+			{obstacle && (
+				<Obstacle initial={obstacle.initialPosition} to={obstacle.toPosition} />
+			)}
 			<Car left={left} />
 		</Container>
 	);
