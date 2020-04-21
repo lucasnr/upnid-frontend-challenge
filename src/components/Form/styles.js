@@ -11,8 +11,9 @@ export const Container = styled.form`
 		border-radius: 0.125rem;
 		font-size: 0.75rem;
 		flex: 1;
-		padding: 0.375rem 1rem;
 		margin-right: 0.75rem;
+		width: 100%;
+		padding: 0.375rem 1rem;
 	}
 
 	button {
