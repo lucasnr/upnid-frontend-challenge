@@ -88,7 +88,7 @@ export default function Game({ start }) {
 			<Car left={left} />
 
 			{paused && <Message>Paused</Message>}
-			{start && counter > 0 && <Message>{counter}</Message>}
+			{start && counter > 0 && <Message countdown={counter}>{counter}</Message>}
 		</Container>
 	);
 }

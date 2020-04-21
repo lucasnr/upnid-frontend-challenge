@@ -70,7 +70,14 @@ export const Obstacle = styled.img.attrs((props) => ({
 export const Message = styled.span`
 	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 0.25rem;
-	color: #fff;
+	color: ${(props) =>
+		props.countdown
+			? props.countdown === 3
+				? '#e45'
+				: props.countdown === 2
+				? '#fe4'
+				: '#4e5'
+			: '#fff'};
 	font-size: 1.5rem;
 	font-weight: bold;
 	left: 50%;
