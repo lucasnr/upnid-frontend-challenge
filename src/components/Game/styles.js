@@ -73,12 +73,12 @@ export const Paused = styled.span.attrs((props) => ({
 	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 0.25rem;
 	color: #fff;
-	font-family: 'Arial';
-	font-size: 1rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	left: 50%;
 	padding: 1rem 2rem;
 	position: absolute;
 	top: 50%;
+	text-transform: uppercase;
 	transform: translate(-50%, -50%);
 `;

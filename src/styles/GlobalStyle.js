@@ -21,6 +21,14 @@ const GlobalStyle = createGlobalStyle`
 		background-color: #efefef;
 	}
 
+	body, input, button {
+		font-family: 'Poppins', sans-serif;
+	}
+
+	button {
+		cursor: pointer;
+	}
+
 	#root {
 		align-items: center;
 		display: flex;
