@@ -7,10 +7,13 @@ export default function Game() {
 	useEffect(() => {
 		document.onkeydown = function (e) {
 			e = e || window.event;
-			if (e.key.toLowerCase() === 'd' || e.key === 'ArrowRight')
+			if (e.key === 'ArrowRight')
 				setLeft((prev) => (prev === 66.66 ? prev : prev + 33.33));
-			else if (e.key.toLowerCase() === 'a' || e.key === 'ArrowLeft')
+			else if (e.key === 'ArrowLeft')
 				setLeft((prev) => (prev === 0 ? prev : prev - 33.33));
+			else if (e.key.toLowerCase() === 'd') setLeft(66.66);
+			else if (e.key.toLowerCase() === 'a') setLeft(0);
+			else if (e.key.toLowerCase() === 's') setLeft(33.33);
 		};
 	}, []);
 
