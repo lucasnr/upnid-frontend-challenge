@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Car, Obstacle } from './styles';
+import { Container, Car, Obstacle, Paused } from './styles';
 
 export default function Game() {
+	const [paused, setPaused] = useState(false);
 	const [left, setLeft] = useState(33.33);
 	const [obstacle, setObstacle] = useState();
 
 	useEffect(() => {
 		document.onkeydown = function (e) {
 			e = e || window.event;
+			if (e.key === 'Escape') setPaused((prev) => !prev);
+			if (paused) return;
+
 			if (e.key === 'ArrowRight')
 				setLeft((prev) => (prev === 66.66 ? prev : prev + 33.33));
 			else if (e.key === 'ArrowLeft')
@@ -48,7 +52,7 @@ export default function Game() {
 			xDown = null;
 			yDown = null;
 		}
-	}, []);
+	}, [paused]);
 
 	useEffect(() => {
 		setInterval(() => {
@@ -63,11 +67,13 @@ export default function Game() {
 	}, []);
 
 	return (
-		<Container>
-			{obstacle && (
+		<Container paused={paused}>
+			{!paused && obstacle && (
 				<Obstacle initial={obstacle.initialPosition} to={obstacle.toPosition} />
 			)}
 			<Car left={left} />
+
+			{paused && <Paused />}
 		</Container>
 	);
 }

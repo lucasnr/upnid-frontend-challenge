@@ -1,11 +1,12 @@
 import styled, { keyframes } from 'styled-components';
 
 import bg from '../../assets/img/bg.gif';
+import bgPaused from '../../assets/img/bg-pause.png';
 import car from '../../assets/img/car.png';
 import obstacle from '../../assets/img/obstacle.png';
 
 export const Container = styled.main`
-	background-image: url(${bg});
+	background-image: url(${(props) => (props.paused ? bgPaused : bg)});
 	background-position: center;
 	background-size: cover;
 	border-radius: 0.25rem;
@@ -64,4 +65,20 @@ export const Obstacle = styled.img.attrs((props) => ({
 	animation: ${(props) => obstacleAnimation(props)} 2s linear forwards;
 	position: absolute;
 	transition: left 300ms ease;
+`;
+
+export const Paused = styled.span.attrs((props) => ({
+	children: 'Paused',
+}))`
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 0.25rem;
+	color: #fff;
+	font-family: 'Arial';
+	font-size: 1rem;
+	font-weight: bold;
+	left: 50%;
+	padding: 1rem 2rem;
+	position: absolute;
+	top: 50%;
+	transform: translate(-50%, -50%);
 `;
