@@ -35,6 +35,7 @@ const GlobalStyle = createGlobalStyle`
 		flex-direction: column;
 		justify-content: center;
 		min-height: 100vh;
+		padding: 1rem 0px;
 	}
 `;
 

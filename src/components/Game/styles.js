@@ -1,7 +1,7 @@
 import styled, { keyframes } from 'styled-components';
 
 import bg from '../../assets/img/bg.gif';
-import bgPaused from '../../assets/img/bg-pause.png';
+import bgPaused from '../../assets/img/bg-pause.jpg';
 import car from '../../assets/img/car.png';
 import obstacle from '../../assets/img/obstacle.png';
 
