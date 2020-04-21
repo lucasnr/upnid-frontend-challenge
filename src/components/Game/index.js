@@ -10,7 +10,6 @@ export default function Game({ start }) {
 
 	useEffect(() => {
 		if (!start || counter > 0) return;
-		console.log(counter);
 
 		document.onkeydown = function (e) {
 			e = e || window.event;
@@ -56,16 +55,6 @@ export default function Game({ start }) {
 			xDown = null;
 			yDown = null;
 		}
-
-		setInterval(() => {
-			const obstacles = [
-				{ initalPosition: 33.33, toPosition: -33.33 },
-				{ initalPosition: 45, toPosition: 33.33 },
-				{ initalPosition: 66.66, toPosition: 99.99 },
-			];
-			const random = Math.floor(Math.random() * 3);
-			setObstacle(obstacles[random]);
-		}, 3500);
 	}, [counter, paused, start]);
 
 	useEffect(() => {
@@ -76,6 +65,20 @@ export default function Game({ start }) {
 				}, 1000);
 		}
 	}, [counter, start]);
+
+	useEffect(() => {
+		if (!start) return;
+
+		setInterval(() => {
+			const obstacles = [
+				{ initalPosition: 33.33, toPosition: -33.33 },
+				{ initalPosition: 45, toPosition: 33.33 },
+				{ initalPosition: 66.66, toPosition: 99.99 },
+			];
+			const random = Math.floor(Math.random() * 3);
+			setObstacle(obstacles[random]);
+		}, 3000);
+	}, [start]);
 
 	return (
 		<Container paused={paused || !start}>
