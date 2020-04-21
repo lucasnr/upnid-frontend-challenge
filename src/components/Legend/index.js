@@ -1,14 +1,9 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { isMobile } from 'react-device-detect';
 
 import { Container, Name, Controls } from './styles';
 
 export default function Legend({ name }) {
-	const isPhone = useMemo(() => {
-		return navigator.userAgent;
-	}, []);
-	console.log(isPhone);
-
 	return (
 		<Container>
 			<Name>{name || 'Jogador sem nome'}</Name>
