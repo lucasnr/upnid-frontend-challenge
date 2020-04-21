@@ -8,9 +8,14 @@ export const Container = styled.main`
 	background-position: center;
 	background-size: cover;
 	border-radius: 0.25rem;
-	height: 30rem;
+	height: 20rem;
 	position: relative;
-	width: 30rem;
+	width: 20rem;
+
+	@media (min-width: 576px) {
+		height: 30rem;
+		width: 30rem;
+	}
 `;
 
 export const Car = styled.img.attrs((props) => ({
@@ -19,10 +24,15 @@ export const Car = styled.img.attrs((props) => ({
 	},
 }))`
 	bottom: 0px;
-	height: 9rem;
+	height: 6rem;
 	position: absolute;
 	transition: left 300ms ease;
-	width: 9rem;
+	width: 6rem;
+
+	@media (min-width: 576px) {
+		height: 9rem;
+		width: 9rem;
+	}
 `;
 
 Car.defaultProps = {
