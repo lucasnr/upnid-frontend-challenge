@@ -1,6 +1,6 @@
 # upnid-frontend-challenge
 
-Upnid frontend car game challenge
+Upnid frontend car game challenge. Deployed at [netlify](https://upnid-frontend-challenge.netlify.app).
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -29,4 +29,5 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 ## Made with
 
 - react
+- react-device-detect
 - styled-components
