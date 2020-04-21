@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
 
-import { Container, Car, Obstacle, Paused } from './styles';
+import { Container, Car, Obstacle, Message } from './styles';
 
-export default function Game() {
+export default function Game({ start }) {
 	const [paused, setPaused] = useState(false);
+	const [counter, setCounter] = useState(3);
 	const [left, setLeft] = useState(33.33);
 	const [obstacle, setObstacle] = useState();
 
 	useEffect(() => {
+		if (!start || counter > 0) return;
+		console.log(counter);
+
 		document.onkeydown = function (e) {
 			e = e || window.event;
 			if (e.key === 'Escape') setPaused((prev) => !prev);
@@ -52,9 +56,7 @@ export default function Game() {
 			xDown = null;
 			yDown = null;
 		}
-	}, [paused]);
 
-	useEffect(() => {
 		setInterval(() => {
 			const obstacles = [
 				{ initalPosition: 33.33, toPosition: -33.33 },
@@ -64,16 +66,26 @@ export default function Game() {
 			const random = Math.floor(Math.random() * 3);
 			setObstacle(obstacles[random]);
 		}, 3500);
-	}, []);
+	}, [counter, paused, start]);
+
+	useEffect(() => {
+		if (start) {
+			if (counter > 0)
+				setTimeout(() => {
+					setCounter((prev) => prev - 1);
+				}, 1000);
+		}
+	}, [counter, start]);
 
 	return (
-		<Container paused={paused}>
+		<Container paused={paused || !start}>
 			{!paused && obstacle && (
 				<Obstacle initial={obstacle.initialPosition} to={obstacle.toPosition} />
 			)}
 			<Car left={left} />
 
-			{paused && <Paused />}
+			{paused && <Message>Paused</Message>}
+			{start && counter > 0 && <Message>{counter}</Message>}
 		</Container>
 	);
 }

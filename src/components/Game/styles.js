@@ -67,18 +67,18 @@ export const Obstacle = styled.img.attrs((props) => ({
 	transition: left 300ms ease;
 `;
 
-export const Paused = styled.span.attrs((props) => ({
-	children: 'Paused',
-}))`
+export const Message = styled.span`
 	background-color: rgba(0, 0, 0, 0.75);
 	border-radius: 0.25rem;
 	color: #fff;
 	font-size: 1.5rem;
 	font-weight: bold;
 	left: 50%;
+	min-width: 8rem;
 	padding: 1rem 2rem;
 	position: absolute;
 	top: 50%;
+	text-align: center;
 	text-transform: uppercase;
 	transform: translate(-50%, -50%);
 `;

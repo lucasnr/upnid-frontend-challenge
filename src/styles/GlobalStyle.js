@@ -32,6 +32,7 @@ const GlobalStyle = createGlobalStyle`
 	#root {
 		align-items: center;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		min-height: 100vh;
 	}
