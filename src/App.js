@@ -1,5 +1,13 @@
 import React from 'react';
 
+import GlobalStyle from './styles/GlobalStyle';
+import Game from './components/Game';
+
 export default function App() {
-  return <h1>Goodbye World</h1>;
+	return (
+		<>
+			<GlobalStyle />
+			<Game />
+		</>
+	);
 }
