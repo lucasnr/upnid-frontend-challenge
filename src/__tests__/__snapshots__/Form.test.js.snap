@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing form component renders without crashing and matches snapshot 1`] = `
+<styled.form>
+  <input
+    id="name"
+    name="name"
+    placeholder="Nome"
+    type="text"
+  />
+  <button
+    type="submit"
+  >
+    Iniciar
+    <span>
+       corrida
+    </span>
+  </button>
+</styled.form>
+`;
