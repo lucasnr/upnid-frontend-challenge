@@ -3,6 +3,10 @@ import { shallow } from 'enzyme';
 
 import Form from '../components/Form';
 
-it('renders without crashing', () => {
-	shallow(<Form />);
+describe('Testing form component', () => {
+	it('renders without crashing', () => {
+		const wrapper = shallow(<Form />);
+
+		expect(wrapper).toMatchSnapshot();
+	});
 });
