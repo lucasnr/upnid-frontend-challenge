@@ -1,0 +1,93 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Legend component renders without crashing and matches snapshot 1`] = `
+<styled.section>
+  <styled.h2>
+    Jogador sem nome
+  </styled.h2>
+  <styled.div>
+    <h5>
+      A
+    </h5>
+    <h6>
+      Ir para o lado esquerdo
+    </h6>
+    <h5>
+      S
+    </h5>
+    <h6>
+      Ir para o centro
+    </h6>
+    <h5>
+      D
+    </h5>
+    <h6>
+      Ir para o lado direito
+    </h6>
+    <h5>
+      Seta esquerda
+    </h5>
+    <h6>
+      Ir para a esquerda
+    </h6>
+    <h5>
+      Seta direita
+    </h5>
+    <h6>
+      Ir para a direita
+    </h6>
+    <h5>
+      ESC
+    </h5>
+    <h6>
+      Pausar jogo
+    </h6>
+  </styled.div>
+</styled.section>
+`;
+
+exports[`Testing legend component renders without crashing and matches snapshot 1`] = `
+<styled.section>
+  <styled.h2>
+    Jogador sem nome
+  </styled.h2>
+  <styled.div>
+    <h5>
+      A
+    </h5>
+    <h6>
+      Ir para o lado esquerdo
+    </h6>
+    <h5>
+      S
+    </h5>
+    <h6>
+      Ir para o centro
+    </h6>
+    <h5>
+      D
+    </h5>
+    <h6>
+      Ir para o lado direito
+    </h6>
+    <h5>
+      Seta esquerda
+    </h5>
+    <h6>
+      Ir para a esquerda
+    </h6>
+    <h5>
+      Seta direita
+    </h5>
+    <h6>
+      Ir para a direita
+    </h6>
+    <h5>
+      ESC
+    </h5>
+    <h6>
+      Pausar jogo
+    </h6>
+  </styled.div>
+</styled.section>
+`;
