@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing game component renders without crashing and matches snapshot 1`] = `
+<styled.main
+  paused={true}
+>
+  <styled.img
+    left={33.33}
+  />
+</styled.main>
+`;
+
+exports[`Testing game component renders without crashing and matches snapshot 2`] = `
+<styled.main
+  paused={false}
+>
+  <styled.img
+    left={33.33}
+  />
+  <styled.span
+    countdown={3}
+  >
+    3
+  </styled.span>
+</styled.main>
+`;
